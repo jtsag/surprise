@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="app.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="app.js"></script>
+        <!-- <script src="levels.json"></script> -->
+        <title>Sudoku!</title>
+    </head>
+
+    <body>
+        <div class="topofpage">
+        <!-- <label for="load">Load Save:</label> -->
+        <!-- <input type="text" id="load" name="load"> -->
+        <input type="button" value="Load Last Save!" onclick="loadPressed()">
+        <!-- <label for="level">You are on level:</label>
+        <input type="text" id="level" name="level"> -->
+        <label for="skip2" id="label4skip2">Skip to:</label>
+        <input type="text" id="skip2" name="skip2">
+        <input type="button" value="Skip!" onclick="skipPressed()">
+        </div>
+        <div class="buttonpanel">
+            <input type="button" value="Check Level" onclick="submitPressed()">
+            <input type="button" value="Next Level" id="nextlevel" onclick = "nextLevelPressed()">
+            <input type="button" value="Save" onclick = "savePressed()">
+            <input type="button" value="Take Stock" onclick = "stockPressed()">
+            <input type="button" value="Clear" onclick = "clearPressed()">
+            <input type="button" value="Hint" onclick="hintPressed()">
+        </div> <br><br>
+        <h1 id="ll">
+            LEVEL 
+        </h1>
+
+        <div class="squares"> 
+            <div name="r1" class="box">
+                <div class="three">
+                <input type="text" id="a1" name="a1" size="1">
+                <input type="text" id="a2" name="a2" size="1">
+                <input type="text" id="a3" name="a3" size="1"> </div>
+                
+                <div class="three">
+                <input type="text" id="b1" name="b1" size="1">
+                <input type="text" id="b2" name="b2" size="1">
+                <input type="text" id="b3" name="b3" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c1" name="c1" size="1">
+                <input type="text" id="c2" name="c2" size="1">
+                <input type="text" id="c3" name="c3" size="1"> </div>
+            </div> <br>
+
+            <div name="r2" class="box">
+                <div class="three">
+                <input type="text" id="a4" name="a4" size="1">
+                <input type="text" id="a5" name="a5" size="1">
+                <input type="text" id="a6" name="a6" size="1"> </div>
+                
+                <div class="three">
+                <input type="text" id="b4" name="b4" size="1">
+                <input type="text" id="b5" name="b5" size="1">
+                <input type="text" id="b6" name="b6" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c4" name="c4" size="1">
+                <input type="text" id="c5" name="c5" size="1">
+                <input type="text" id="c6" name="c6" size="1"> </div>
+            </div> <br>
+
+            <div name="r3" class="box">
+                <div class="three">
+                <input type="text" id="a7" name="a7" size="1">
+                <input type="text" id="a8" name="a8" size="1">
+                <input type="text" id="a9" name="a9" size="1"> </div>
+                
+                <div class="three">
+                <input type="text" id="b7" name="b7" size="1">
+                <input type="text" id="b8" name="b8" size="1">
+                <input type="text" id="b9" name="b9" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c7" name="c7" size="1">
+                <input type="text" id="c8" name="c8" size="1">
+                <input type="text" id="c9" name="c9" size="1"> </div>
+            </div> <br> <br>
+
+            <div name="r4" class="box">
+                <div class="three">
+                <input type="text" id="d1" name="d1" size="1">
+                <input type="text" id="d2" name="d2" size="1">
+                <input type="text" id="d3" name="d3" size="1"> </div>
+                
+                <div class="three">
+                <input type="text" id="e1" name="e1" size="1">
+                <input type="text" id="e2" name="e2" size="1">
+                <input type="text" id="e3" name="e3" size="1"> </div>
+
+                <div class="three1">
+                <input type="text" id="f1" name="f1" size="1">
+                <input type="text" id="f2" name="f2" size="1">
+                <input type="text" id="f3" name="f3" size="1"> </div>
+            </div> <br>
+
+            <div name="r5" class="box">
+                <div class="three">
+                <input type="text" id="d4" name="d4" size="1">
+                <input type="text" id="d5" name="d5" size="1">
+                <input type="text" id="d6" name="d6" size="1"> </div>
+                
+                <div class="three">
+                <input type="text" id="e4" name="e4" size="1">
+                <input type="text" id="e5" name="e5" size="1">
+                <input type="text" id="e6" name="e6" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="f4" name="f4" size="1">
+                <input type="text" id="f5" name="f5" size="1">
+                <input type="text" id="f6" name="f6" size="1"> </div>
+            </div> <br>
+
+            <div name="r6" class="box">
+                <div class="three">
+                <input type="text" id="d7" name="d7" size="1">
+                <input type="text" id="d8" name="d8" size="1">
+                <input type="text" id="d9" name="d9" size="1"> </div>
+
+                <div class="three">
+                <input type="text" id="e7" name="e7" size="1">
+                <input type="text" id="e8" name="e8" size="1">
+                <input type="text" id="e9" name="e9" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="f7" name="f7" size="1">
+                <input type="text" id="f8" name="f8" size="1">
+                <input type="text" id="f9" name="f9" size="1"> </div>
+            </div> <br> <br>
+ 
+            <div name="r7" class="box">
+                <div class="three">
+                <input type="text" id="g1" name="g1" size="1">
+                <input type="text" id="g2" name="g2" size="1">
+                <input type="text" id="g3" name="g3" size="1"> </div>
+                 
+                <div class="three">
+                <input type="text" id="i1" name="i1" size="1">
+                <input type="text" id="i2" name="i2" size="1">
+                <input type="text" id="i3" name="i3" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="j1" name="j1" size="1">
+                <input type="text" id="j2" name="j2" size="1">
+                <input type="text" id="j3" name="j3" size="1"> </div>
+            </div> <br>
+
+            <div name="r8" class="box">
+                <div class="three">
+                <input type="text" id="g4" name="g4" size="1">
+                <input type="text" id="g5" name="g5" size="1">
+                <input type="text" id="g6" name="g6" size="1"> </div>
+ 
+                <div class="three">
+                <input type="text" id="i4" name="i4" size="1">
+                <input type="text" id="i5" name="i5" size="1">
+                <input type="text" id="i6" name="i6" size="1"> </div>
+                
+                <div class="three1">
+                <input type="text" id="j4" name="j4" size="1">
+                <input type="text" id="j5" name="j5" size="1">
+                <input type="text" id="j6" name="j6" size="1"> </div>
+            </div> <br>
+            
+            <div name="r9" class="box">
+                <div class="three">
+                <input type="text" id="g7" name="g7" size="1">
+                <input type="text" id="g8" name="g8" size="1">
+                <input type="text" id="g9" name="g9" size="1"> </div>
+
+                <div class="three">
+                <input type="text" id="i7" name="i7" size="1">
+                <input type="text" id="i8" name="i8" size="1">
+                <input type="text" id="i9" name="i9" size="1"> </div>
+
+                <div class="three1">
+                <input type="text" id="j7" name="j7" size="1">
+                <input type="text" id="j8" name="j8" size="1">
+                <input type="text" id="j9" name="j9" size="1"> </div>
+            </div> <br>
+        </div>
+        <br> <br>
+        <div class="messageboard">
+            <label for="message">Messages:</label>
+            <input type="text" id="message" name="message" size="100">
+            <br> <br>
+            <label for="1_count">1s:</label>
+            <input type="text" id="1_count" name="1_count">
+            <label for="2_count">2s:</label>
+            <input type="text" id="2_count" name="2_count">
+            <label for="3_count">3s:</label>
+            <input type="text" id="3_count" name="3_count">
+            <label for="4_count">4s:</label>
+            <input type="text" id="4_count" name="4_count">
+            <label for="5_count">5s:</label> 
+            <input type="text" id="5_count" name="5_count">
+            <label for="6_count">6s:</label>
+            <input type="text" id="6_count" name="6_count">
+            <label for="7_count">7s:</label>
+            <input type="text" id="7_count" name="7_count">
+            <label for="8_count">8s:</label>
+            <input type="text" id="8_count" name="8_count">
+            <label for="9_count">9s:</label>
+            <input type="text" id="9_count" name="9_count">
+        </div>
+
+        <br>
+        <h2>Scratch Pad</h2>
+        <div class="center"><input type="button" id="ref" value="Refresh Scratch Pad" onclick="refreshPressed()"></div>
+        <br>
+        <div class="rectangles"> 
+            <div name="r1" class="box">
+                <div class="three">
+                <input type="text" id="a1s" name="a1" size="10">
+                <input type="text" id="a2s" name="a2" size="10">
+                <input type="text" id="a3s" name="a3" size="10"> </div>
+                
+                <div class="three">
+                <input type="text" id="b1s" name="b1" size="10">
+                <input type="text" id="b2s" name="b2" size="10">
+                <input type="text" id="b3s" name="b3" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c1s" name="c1" size="10">
+                <input type="text" id="c2s" name="c2" size="10">
+                <input type="text" id="c3s" name="c3" size="10"> </div>
+            </div> <br>
+
+            <div name="r2" class="box">
+                <div class="three">
+                <input type="text" id="a4s" name="a4" size="10">
+                <input type="text" id="a5s" name="a5" size="10">
+                <input type="text" id="a6s" name="a6" size="10"> </div>
+                
+                <div class="three">
+                <input type="text" id="b4s" name="b4" size="10">
+                <input type="text" id="b5s" name="b5" size="10">
+                <input type="text" id="b6s" name="b6" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c4s" name="c4" size="10">
+                <input type="text" id="c5s" name="c5" size="10">
+                <input type="text" id="c6s" name="c6" size="10"> </div>
+            </div> <br>
+
+            <div name="r3" class="box">
+                <div class="three">
+                <input type="text" id="a7s" name="a7" size="10">
+                <input type="text" id="a8s" name="a8" size="10">
+                <input type="text" id="a9s" name="a9" size="10"> </div>
+                
+                <div class="three">
+                <input type="text" id="b7s" name="b7" size="10">
+                <input type="text" id="b8s" name="b8" size="10">
+                <input type="text" id="b9s" name="b9" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="c7s" name="c7" size="10">
+                <input type="text" id="c8s" name="c8" size="10">
+                <input type="text" id="c9s" name="c9" size="10"> </div>
+            </div> <br> <br>
+
+            <div name="r4" class="box">
+                <div class="three">
+                <input type="text" id="d1s" name="d1" size="10">
+                <input type="text" id="d2s" name="d2" size="10">
+                <input type="text" id="d3s" name="d3" size="10"> </div>
+                
+                <div class="three">
+                <input type="text" id="e1s" name="e1" size="10">
+                <input type="text" id="e2s" name="e2" size="10">
+                <input type="text" id="e3s" name="e3" size="10"> </div>
+
+                <div class="three1">
+                <input type="text" id="f1s" name="f1" size="10">
+                <input type="text" id="f2s" name="f2" size="10">
+                <input type="text" id="f3s" name="f3" size="10"> </div>
+            </div> <br>
+
+            <div name="r5" class="box">
+                <div class="three">
+                <input type="text" id="d4s" name="d4" size="10">
+                <input type="text" id="d5s" name="d5" size="10">
+                <input type="text" id="d6s" name="d6" size="10"> </div>
+                
+                <div class="three">
+                <input type="text" id="e4s" name="e4" size="10">
+                <input type="text" id="e5s" name="e5" size="10">
+                <input type="text" id="e6s" name="e6" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="f4s" name="f4" size="10">
+                <input type="text" id="f5s" name="f5" size="10">
+                <input type="text" id="f6s" name="f6" size="10"> </div>
+            </div> <br>
+
+            <div name="r6" class="box">
+                <div class="three">
+                <input type="text" id="d7s" name="d7" size="10">
+                <input type="text" id="d8s" name="d8" size="10">
+                <input type="text" id="d9s" name="d9" size="10"> </div>
+
+                <div class="three">
+                <input type="text" id="e7s" name="e7" size="10">
+                <input type="text" id="e8s" name="e8" size="10">
+                <input type="text" id="e9s" name="e9" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="f7s" name="f7" size="10">
+                <input type="text" id="f8s" name="f8" size="10">
+                <input type="text" id="f9s" name="f9" size="10"> </div>
+            </div> <br> <br>
+ 
+            <div name="r7" class="box">
+                <div class="three">
+                <input type="text" id="g1s" name="g1" size="10">
+                <input type="text" id="g2s" name="g2" size="10">
+                <input type="text" id="g3s" name="g3" size="10"> </div>
+                 
+                <div class="three">
+                <input type="text" id="i1s" name="i1" size="10">
+                <input type="text" id="i2s" name="i2" size="10">
+                <input type="text" id="i3s" name="i3" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="j1s" name="j1" size="10">
+                <input type="text" id="j2s" name="j2" size="10">
+                <input type="text" id="j3s" name="j3" size="10"> </div>
+            </div> <br>
+
+            <div name="r8" class="box">
+                <div class="three">
+                <input type="text" id="g4s" name="g4" size="10">
+                <input type="text" id="g5s" name="g5" size="10">
+                <input type="text" id="g6s" name="g6" size="10"> </div>
+ 
+                <div class="three">
+                <input type="text" id="i4s" name="i4" size="10">
+                <input type="text" id="i5s" name="i5" size="10">
+                <input type="text" id="i6s" name="i6" size="10"> </div>
+                
+                <div class="three1">
+                <input type="text" id="j4s" name="j4" size="10">
+                <input type="text" id="j5s" name="j5" size="10">
+                <input type="text" id="j6s" name="j6" size="10"> </div>
+            </div> <br>
+            
+            <div name="r9" class="box">
+                <div class="three">
+                <input type="text" id="g7s" name="g7" size="10">
+                <input type="text" id="g8s" name="g8" size="10">
+                <input type="text" id="g9s" name="g9" size="10"> </div>
+
+                <div class="three">
+                <input type="text" id="i7s" name="i7" size="10">
+                <input type="text" id="i8s" name="i8" size="10">
+                <input type="text" id="i9s" name="i9" size="10"> </div>
+
+                <div class="three1">
+                <input type="text" id="j7s" name="j7" size="10">
+                <input type="text" id="j8s" name="j8" size="10">
+                <input type="text" id="j9s" name="j9" size="10"> </div>
+            </div> <br>
+        </div>
+        <script>var currLevel = getFileInfo("86");</script>
+    </body>
+</html>

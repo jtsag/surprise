@@ -1,0 +1,88 @@
+body {
+    background-color: #e1fad2;
+}
+
+#ll {
+    /* left:100px; */
+    position:relative;
+    text-align : center;
+}
+
+.squares {
+    background-color : black;
+    max-width : 205px;
+    line-height : 55%;
+    position:relative; 
+    /* left:80px; */
+    margin : auto;
+}
+
+.squares input {
+    max-width : 10px;
+    margin-right : 0;
+    margin-left : 0;
+    display : inline-block;
+}
+
+.rectangles {
+    background-color : black;
+    line-height : 55%;
+    margin : auto;
+    max-width : 835px
+}
+
+.rectangles input {
+    max-width : 80px;
+}
+  
+
+div.box {
+    max-width : 150px;
+    max-height : 10px;
+    display : inline;
+    margin-top : 0px;
+    margin-bottom : 0px;
+    margin-left : 0;
+    margin-right : 0;
+}
+
+div.three {
+    display : inline-block;
+    margin-right : 5px;
+}
+
+div.three1 {
+    display : inline-block;
+    margin-right : 0;
+    margin-left : 0;
+}
+
+.buttonpanel {
+    margin : auto;
+}
+
+.messageboard {
+    margin : auto;
+    max-width : 1050px;
+}
+
+.messageboard input {
+    max-width : 20px;
+}
+
+#message {
+    max-width : 500px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content : center;
+}
+
+#skip2 {
+    width : 50px;
+}
